@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// ユーザー登録
+Route::get('signup', 'SignupController@index')->name('signup.index');
+
+Route::post('signup', 'SignupController@poxtIndex');
+
+Route::get('signup/confirm', 'SignupController@confirm')->name('signup.confirm');
+
+Route::post('signup/confirm', 'SingupController@postConfirm');
+
+Route::get('signup/thanks', 'SignupController@thanks')->name('signup.thanks');
