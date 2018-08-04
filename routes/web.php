@@ -18,6 +18,6 @@ Route::post('signup', 'SignupController@poxtIndex');
 
 Route::get('signup/confirm', 'SignupController@confirm')->name('signup.confirm');
 
-Route::post('signup/confirm', 'SingupController@postConfirm');
+Route::post('signup/confirm', 'SignupController@postConfirm');
 
 Route::get('signup/thanks', 'SignupController@thanks')->name('signup.thanks');
