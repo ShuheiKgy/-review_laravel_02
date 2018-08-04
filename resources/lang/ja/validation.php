@@ -141,6 +141,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => '名前',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード',
+    ],
+
+    'password_between' => 'パスワードは、:min文字以上:maxまでにしてください。',
+    'password_string' => 'パスワードは、指定された文字のみでお願いします。',
 
 ];
