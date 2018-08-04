@@ -20,17 +20,17 @@ class SignupController extends Controller
 
     public function postIndex(Request $request)
     {
-        $this->validate($request, [
+        $data = $this->validate($request, [
             'name' => 'required|max:255',
             'email' => 'required|max:255|email|unique:users,email',
             'password' => 'required|confirmed|password_between:4,30|password_string',
         ]);
 
-        $data = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password,
-        ];
+//        $data = [
+//            'name' => $request->name,
+//            'email' => $request->email,
+//            'password' => $request->password,
+//        ];
 
         \Session::put($this->sessionKey, $data);
 
