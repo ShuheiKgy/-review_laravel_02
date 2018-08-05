@@ -62,6 +62,6 @@ class SignupController extends Controller
 
     public function thanks()
     {
-        return view('signup.index');
+        return view('signup.thanks');
     }
 }
