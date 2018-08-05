@@ -14,7 +14,7 @@
 // ユーザー登録
 Route::get('signup', 'SignupController@index')->name('signup.index');
 
-Route::post('signup', 'SignupController@poxtIndex');
+Route::post('signup', 'SignupController@postIndex');
 
 Route::get('signup/confirm', 'SignupController@confirm')->name('signup.confirm');
 

@@ -36,4 +36,32 @@ class SignupController extends Controller
 
         return redirect()->route('signup.confirm');
     }
+
+    public function confirm()
+    {
+        if (!$data = \Session::get($this->sessionKey)) {
+            return redirect()->route('signup.index');
+        }
+
+        return view('signup.confirm')->with(compact('data'));
+    }
+
+    public function postConfirm(User $user)
+    {
+        if (!$data = \Session::get($this->sessionKey)) {
+            return redirect()->route('signup.index');
+        }
+
+        $data['password'] = bcrypt($data['password']);
+        $user->fill($data)->save();
+        auth('user')->login($user);
+        \Session::forget($this->sessionKey);
+
+        return redirect()->route('signup.thanks');
+    }
+
+    public function thanks()
+    {
+        return view('signup.index');
+    }
 }

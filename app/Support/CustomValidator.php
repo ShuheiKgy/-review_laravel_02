@@ -36,6 +36,6 @@ class CustomValidator extends Validator
 
     public function  validatePasswordString($attribute, $value, $parameters)
     {
-        return preg_match('/^[!-~]+$', $value);
+        return preg_match('/^[!-~]+$/', $value);
     }
 }
