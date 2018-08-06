@@ -19,7 +19,7 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             $route = ($guard) ? $guard.'.top' :'/';
-            
+
             return redirect()->route($route);
         }
 
