@@ -33,6 +33,6 @@ Route::prefix('admin')->namespace('Admin')->as('admin.')->group(function () {
     Route::middleware('auth:admin')->group(function () {
         Route::get('logout', 'LoginController@logout')->name('logout');
 
-        Route::get('', 'LoginController@index')->name('top');
+        Route::get('', 'IndexController@index')->name('top');
     });
 });
