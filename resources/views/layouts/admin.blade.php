@@ -10,9 +10,9 @@
 <body>
 
 <ul>
-    <li><a href="/admin/user"></a>ユーザー一覧</li>
-    <li><a href="/admin/message"></a>個別ユーザーへのメッセージ</li>
-    <li><a href="{{ route('admin.logout') }}"></a>ログアウト</li>
+    <li><a href="/admin/user">ユーザー一覧</a></li>
+    <li><a href="/admin/message">個別ユーザーへのメッセージ</a></li>
+    <li><a href="{{ route('admin.logout') }}">ログアウト</a></li>
 </ul>
 
 @yield('content')
