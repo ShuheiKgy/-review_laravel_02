@@ -22,7 +22,7 @@ class LoginController extends Controller
 
     public function validateLogin(Request $request)
     {
-        $message = [
+        $messages = [
             $this->username() . '.required' => 'ログインIDを入力してください。',
             'password.required' => 'パスワードを入力してください。',
         ];
@@ -30,7 +30,7 @@ class LoginController extends Controller
         $this->validate($request, [
             $this->username() => 'required|string',
             'password' => 'required|string',
-        ], $message);
+        ], $messages);
     }
 
     public function username()

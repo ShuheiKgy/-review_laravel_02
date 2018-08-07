@@ -24,6 +24,7 @@ Route::get('signup/thanks', 'SignupController@thanks')->name('signup.thanks');
 
 // 管理画面
 Route::prefix('admin')->namespace('Admin')->as('admin.')->group(function () {
+
     Route::middleware('guest:admin')->group(function () {
         Route::get('login', 'LoginController@showLoginForm')->name('login');
 
