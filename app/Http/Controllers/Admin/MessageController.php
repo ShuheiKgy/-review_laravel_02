@@ -32,4 +32,11 @@ class MessageController extends Controller
 
         return redirect(route('admin.message.edit', $message))->with(compact('_flash_msg', '登録が完了しました'));
     }
+
+    public function edit(Message $message)
+    {
+        $userlist = User::getUserList();
+
+        return view('admin.message.create')->with(compact('massage', 'userlist'));
+    }
 }
