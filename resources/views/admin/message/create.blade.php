@@ -40,7 +40,7 @@
         </ul>
 
         <input type="submit" value="{{ ($message->exists) ? '変更する' : '登録する' }}">
-        
+
     </form>
 
 @endsection

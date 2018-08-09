@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\SaveMessage;
 use App\Message;
 use App\User;
 use Illuminate\Http\Request;
@@ -21,5 +22,14 @@ class MessageController extends Controller
         $userlist = User::getUserList();
 
         return view('admin.message.create')->with(compact('message', 'userlist'));
+    }
+
+    public function store(SaveMessage $request, Message $message)
+    {
+        $data = $request->only('user_id', 'title', 'content');
+
+        $message->forceFill($data)->save();
+
+        return redirect(route('admin.message.edit', $message))->with(compact('_flash_msg', '登録が完了しました'));
     }
 }
