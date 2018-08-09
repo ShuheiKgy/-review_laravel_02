@@ -48,6 +48,6 @@ Route::prefix('admin')->namespace('Admin')->as('admin.')->group(function () {
 
         Route::get('user', 'UserController@index')->name('user.index');
 
-        Route::delete('user/destroy/{user}', 'UserController@destroy')->name(user.destroy);
+        Route::delete('user/destroy/{user}', 'UserController@destroy')->name('user.destroy');
     });
 });
