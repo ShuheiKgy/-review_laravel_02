@@ -27,8 +27,8 @@
             function deleteRecord(url, btn) {
                 $.ajax({
                     url: url,
-                    data: { method: "DELETE"},
-                    method: "post"
+                    data: { method: "post"},
+                    method: "DELETE"
                 }).done(function () {
                     $(btn).closest("tr").remove();
                 }).fail(function (xhr, str1, str2) {
