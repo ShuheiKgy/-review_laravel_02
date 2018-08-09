@@ -22,7 +22,7 @@
     </table>
 
     <script>
-        jQuery(function () {
+        jQuery(function ($) {
 
             function deleteRecord(url, btn) {
                 $.ajax({
@@ -46,7 +46,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-        })
+        });
     </script>
 
 @endsection
