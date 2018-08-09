@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $users = User::latest()->get();
+        $users = User::latest()->withCount('messages')->get();
 
         return view('admin.user.index')->with(compact('users'));
     }
