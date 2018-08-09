@@ -34,7 +34,7 @@ class User extends Authenticatable
 
     public static function getUserList()
     {
-        return static::latest()->pluck('name', id);
+        return static::latest()->pluck('name', 'id');
     }
 
 }

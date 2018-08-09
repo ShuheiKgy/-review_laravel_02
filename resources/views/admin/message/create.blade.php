@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>メッセージ{{ ($messages->exists) ? '変更' : '登録' }}</h1>
+    <h1>メッセージ{{ ($message->exists) ? '変更' : '登録' }}</h1>
 
     @if ($errors->any())
         <ul class="error-box">
