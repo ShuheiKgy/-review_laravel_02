@@ -37,7 +37,7 @@ class MessageController extends Controller
     {
         $userlist = User::getUserList();
 
-        return view('admin.message.create')->with(compact('massage', 'userlist'));
+        return view('admin.message.create')->with(compact('message', 'userlist'));
     }
 
     public function update(SaveMessage $request, Message $message)
