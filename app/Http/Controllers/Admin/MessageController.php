@@ -30,7 +30,7 @@ class MessageController extends Controller
 
         $message->forceFill($data)->save();
 
-        return redirect(route('admin.message.edit', $message))->with(compact('_flash_msg', '登録が完了しました'));
+        return redirect(route('admin.message.edit', $message))->with('_flash_msg', '登録が完了しました');
     }
 
     public function edit(Message $message)
@@ -46,6 +46,6 @@ class MessageController extends Controller
 
         $message->forceFill($data)->save();
 
-        return redirect(route('admin.message.edit', $message))->with(compact('_flash_msg', '変更が完了しました'));
+        return redirect(route('admin.message.edit', $message))->with('_flash_msg', '変更が完了しました');
     }
 }
