@@ -45,5 +45,9 @@ Route::prefix('admin')->namespace('Admin')->as('admin.')->group(function () {
         Route::get('message/edit/{message}', 'MessageController@edit')->name('message.edit');
 
         Route::post('message/edit/{message}', 'MessageController@update');
+
+        Route::get('user', 'UserController@index')->name('user.index');
+
+        Route::delete('user/destroy/{user}', 'UserController@destroy')->name(user.destroy);
     });
 });
