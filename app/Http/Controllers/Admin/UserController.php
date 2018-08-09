@@ -14,4 +14,11 @@ class UserController extends Controller
 
         return view('admin.user.index')->with(compact('users'));
     }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return ['success' => true];
+    }
 }
