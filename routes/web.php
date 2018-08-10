@@ -31,6 +31,20 @@ Route::prefix('admin')->namespace('Admin')->as('admin.')->group(function () {
         Route::post('login', 'LoginController@login');
     });
 
+    Route::middleware('auth:user')->group(function () {
+        Route::get('', 'IndexController@index')->name('top');
+
+        Route::get('logout', 'LoginController@logout')->name('logout');
+
+        Route::get('profile/edit', 'ProfileController@edit')->name('profile.edit');
+
+        Route::post('profile/edit', 'ProfileController@update');
+
+        Route::get('message', 'MessageController@index')->name('message.index');
+
+        Route::get('message/show/{message}', 'MessageController@show')->name('message.show');
+    });
+
     Route::middleware('auth:admin')->group(function () {
         Route::get('logout', 'LoginController@logout')->name('logout');
 
