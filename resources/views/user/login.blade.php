@@ -9,7 +9,7 @@
 
 <h2>ユーザーログイン</h2>
 
-@if($erros->any())
+@if($errors->any())
     <ul class="error-box">
         @foreach($errors->all() as $_error)
             <li>{{ $_error }}</li>

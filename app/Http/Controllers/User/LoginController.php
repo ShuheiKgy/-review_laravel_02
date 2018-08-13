@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers\User;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
+    use AuthenticatesUsers;
+
     public function redirectTo()
     {
         return route('user.top');
     }
 
-    public function  showLoginForm()
+    public function showLoginForm()
     {
         return view('user.login');
     }
