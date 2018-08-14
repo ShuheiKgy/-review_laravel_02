@@ -14,4 +14,11 @@ class MessageController extends Controller
 
         return view('user.message.index')->with(compact('messages'));
     }
+
+    public function show(Message $message)
+    {
+        $this->authorize('view', $message);
+
+        return view('user.message.show')->with(compact('message'));
+    }
 }
