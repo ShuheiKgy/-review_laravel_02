@@ -1,5 +1,7 @@
 @extends('layouts.user')
 
+@section('title', '登録者情報変更')
+
 @section('content')
 
     <h1>登録者情報変更</h1>
@@ -12,7 +14,7 @@
         </ul>
     @endif
 
-    @if($_flash_msg = $Session::get('$_flash_msg'))
+    @if($_flash_msg = Session::get('_flash_msg'))
         <p class="info-box">{{ $_flash_msg }}</p>
     @endif
 
